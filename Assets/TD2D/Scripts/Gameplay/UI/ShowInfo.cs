@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 public class ShowInfo : MonoBehaviour
 {
 	// Name of unit
-    public Text unitName;
+    public TextMeshProUGUI unitName;
 	// Primary icon for displaing
     public Image primaryIcon;
 	// Primary text for displaing

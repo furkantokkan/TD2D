@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 #if UNITY_EDITOR
 [ExecuteInEditMode]
@@ -13,11 +14,11 @@ public class LevelDescriptionInspector : MonoBehaviour
 	// Level icon
 	public Image icon;
 	// Level header
-	public Text header;
+	public TextMeshProUGUI header;
 	// Level description
-	public Text description;
+	public TextMeshProUGUI description;
 	// Level attention
-	public Text attention;
+	public TextMeshProUGUI attention;
 
 	/// <summary>
 	/// Raises the enable event.

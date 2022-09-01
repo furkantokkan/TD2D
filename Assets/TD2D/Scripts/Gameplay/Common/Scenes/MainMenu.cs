@@ -8,53 +8,62 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
-	// Name of scene to start on click
+    // Name of scene to start on click
     public string startSceneName;
-	// Credits menu
-	public GameObject creditsMenu;
+    // Credits menu
+    public GameObject upgradeMenu;
 
-	/// <summary>
-	/// Raises the enable event.
-	/// </summary>
-	void OnEnable()
-	{
-		EventManager.StartListening("ButtonPressed", ButtonPressed);
-	}
+    public GameObject shopMenu;
 
-	/// <summary>
-	/// Raises the disable event.
-	/// </summary>
-	void OnDisable()
-	{
-		EventManager.StopListening("ButtonPressed", ButtonPressed);
-	}
+    /// <summary>
+    /// Raises the enable event.
+    /// </summary>
+    void OnEnable()
+    {
+        EventManager.StartListening("ButtonPressed", ButtonPressed);
 
-	void Awake()
-	{
-		Debug.Assert(creditsMenu, "Wrong initial settings");
-	}
+    }
 
-	/// <summary>
-	/// Buttons pressed handler.
-	/// </summary>
-	/// <param name="obj">Object.</param>
-	/// <param name="param">Parameter.</param>
-	private void ButtonPressed(GameObject obj, string param)
-	{
-		switch (param)
-		{
-		case "Quit":
-			Application.Quit();
-			break;
-		case "Start":
-			SceneManager.LoadScene(startSceneName);
-			break;
-		case "OpenCredits":
-			creditsMenu.SetActive(true);
-			break;
-		case "CloseCredits":
-			creditsMenu.SetActive(false);
-			break;
-		}
-	}
+    /// <summary>
+    /// Raises the disable event.
+    /// </summary>
+    void OnDisable()
+    {
+        EventManager.StopListening("ButtonPressed", ButtonPressed);
+    }
+
+    void Awake()
+    {
+        Debug.Assert(upgradeMenu, "Wrong initial settings");
+    }
+
+    /// <summary>
+    /// Buttons pressed handler.
+    /// </summary>
+    /// <param name="obj">Object.</param>
+    /// <param name="param">Parameter.</param>
+    private void ButtonPressed(GameObject obj, string param)
+    {
+        switch (param)
+        {
+            case "Quit":
+                Application.Quit();
+                break;
+            case "Start":
+                SceneManager.LoadScene(startSceneName);
+                break;
+            case "OpenUpgrade":
+                upgradeMenu.SetActive(true);
+                break;
+            case "OpenShop":
+                shopMenu.gameObject.SetActive(true);
+                break;
+            case "CloseShop":
+                shopMenu.gameObject.SetActive(false);
+                break;
+            case "CloseUpgrade":
+                upgradeMenu.SetActive(false);
+                break;
+        }
+    }
 }
