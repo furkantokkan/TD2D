@@ -38,7 +38,7 @@ public class WavesTimer : MonoBehaviour
 	/// </summary>
 	void OnDisable()
 	{
-		StopAllCoroutines ();
+		StopAllCoroutines();
 	}
 
 	/// <summary>
